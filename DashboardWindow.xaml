@@ -1,0 +1,17 @@
+<Window x:Class="TheCozyCupPOS.DashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Hourly Sales Dashboard" Height="400" Width="600">
+    <Grid Margin="10">
+        <ItemsControl x:Name="ChartContainer">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="{Binding Key}" HorizontalAlignment="Center"/>
+                        <Rectangle Height="{Binding Value}" Width="20" Fill="LightBlue"/>
+                        <TextBlock Text="{Binding Value}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Window>
