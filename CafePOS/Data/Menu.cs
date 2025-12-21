@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
+using CafePOS.Models;
 
-public class Menu
+namespace CafePOS.Data
 {
-    private List<MenuItem> items = new List<MenuItem>();
+    public class Menu
+    {
+        private List<MenuItem> items = new List<MenuItem>();
 
-      public Menu()
+        public Menu()
         {
             items.Add(new MenuItem("Latte", 12.5m, "Coffee"));
             items.Add(new MenuItem("Espresso", 8m, "Coffee"));
@@ -13,18 +16,19 @@ public class Menu
             items.Add(new MenuItem("Muffin", 8m, "Pastry"));
         }
 
-    public void AddItem(MenuItem item)
-    {
-        items.Add(item);
-    }
+        public void AddItem(MenuItem item)
+        {
+            items.Add(item);
+        }
 
-    public List<MenuItem> GetAllItems()
-    {
-        return items;
-    }
+        public List<MenuItem> GetAllItems()
+        {
+            return items;
+        }
 
-    public List<MenuItem> GetItemsByCategory(string category)
-    {
-        return items.Where(i => i.Category == category).ToList();
+        public List<MenuItem> GetItemsByCategory(string category)
+        {
+            return items.Where(i => i.Category == category).ToList();
+        }
     }
 }

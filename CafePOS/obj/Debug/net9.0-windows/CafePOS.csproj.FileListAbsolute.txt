@@ -24,3 +24,5 @@ C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\refint\
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS.pdb
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS.genruntimeconfig.cache
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\ref\CafePOS.dll
+C:\Users\Maria\Documents\GitHub\CafePOS\CafePOS\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Maria\Documents\GitHub\CafePOS\CafePOS\obj\Debug\net9.0-windows\CafePOS_MarkupCompile.lref

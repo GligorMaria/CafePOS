@@ -1,14 +1,34 @@
 <Window x:Class="CafePOS.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CafePOS"
-        Height="450"
-        Width="800">
+        xmlns:views="clr-namespace:CafePOS.Views"
+        xmlns:vm="clr-namespace:CafePOS.ViewModels"
+        Title="Cafe POS" Height="600" Width="1000">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
+            <views:DashboardView />
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:OrderViewModel}">
+            <views:OrderView />
+        </DataTemplate>
+    </Window.Resources>
 
     <Grid>
-        <TextBlock Text="CafePOS is running!"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="24"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="#2C3E50" Padding="10">
+            <StackPanel>
+                <TextBlock Text="CafePOS" Foreground="White" FontSize="20" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+                <Button Content="New Order" Command="{Binding ShowOrderCommand}" Margin="0,5" Height="35"/>
+                <Button Content="History" Command="{Binding ShowHistoryCommand}" Margin="0,5" Height="35"/>
+            </StackPanel>
+        </Border>
+
+        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}" />
     </Grid>
 </Window>
