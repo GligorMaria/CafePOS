@@ -3,11 +3,8 @@ using CafePOS.Services;
 using System.IO;
 using System;
 
-namespace CafePOS.Views // Match the namespace in your XAML
-{
-    // Change name from DashboardWindow to DashboardView 
-    // and inherit from UserControl (not Window)
-    public partial class DashboardView : UserControl 
+namespace CafePOS.Views {
+        public partial class DashboardView : UserControl 
     {
         public DashboardView()
         {

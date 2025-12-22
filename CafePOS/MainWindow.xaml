@@ -3,16 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:views="clr-namespace:CafePOS.Views"
         xmlns:vm="clr-namespace:CafePOS.ViewModels"
-        Title="Cafe POS" Height="600" Width="1000">
-
+        Title="Cafe POS" Height="650" Width="1050" Background="{StaticResource CafeBackground}">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
-            <views:DashboardView />
-        </DataTemplate>
-        
-        <DataTemplate DataType="{x:Type vm:OrderViewModel}">
-            <views:OrderView />
-        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:DashboardViewModel}"><views:DashboardView /></DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OrderViewModel}"><views:OrderView /></DataTemplate>
     </Window.Resources>
 
     <Grid>
@@ -21,14 +15,14 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Background="#2C3E50" Padding="10">
+        <Border Background="{StaticResource CafeDarkBrown}" CornerRadius="0,35,35,0" Padding="15">
             <StackPanel>
-                <TextBlock Text="CafePOS" Foreground="White" FontSize="20" Margin="0,0,0,20" HorizontalAlignment="Center"/>
-                <Button Content="New Order" Command="{Binding ShowOrderCommand}" Margin="0,5" Height="35"/>
-                <Button Content="History" Command="{Binding ShowHistoryCommand}" Margin="0,5" Height="35"/>
+                <TextBlock Text="☕ CafePOS" Foreground="White" FontSize="26" FontWeight="Bold" Margin="0,20,0,40" HorizontalAlignment="Center"/>
+                <Button Content="New Order" Style="{StaticResource CafeButtonStyle}" Command="{Binding ShowOrderCommand}" Margin="0,10"/>
+                <Button Content="History" Style="{StaticResource CafeButtonStyle}" Command="{Binding ShowHistoryCommand}" Margin="0,10" Opacity="0.7"/>
             </StackPanel>
         </Border>
 
-        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}" />
+        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}" Margin="10"/>
     </Grid>
 </Window>

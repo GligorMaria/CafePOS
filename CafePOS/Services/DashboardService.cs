@@ -43,7 +43,6 @@ private decimal ExtractTotalFromReceipt(string receipt)
         {
             try 
             {
-                // Splits "Final Total: 50.00 RON" into parts and parses the middle
                 return decimal.Parse(line.Split(':')[1].Replace("RON", "").Trim());
             }
             catch 

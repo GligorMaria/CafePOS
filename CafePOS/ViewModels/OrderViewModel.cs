@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using CafePOS.Data;
 
+
 namespace CafePOS.ViewModels
 {
     public class OrderViewModel : INotifyPropertyChanged

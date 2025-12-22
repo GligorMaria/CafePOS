@@ -3,16 +3,17 @@ C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\bin\Debug\net9.0-windows\CafePOS
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\bin\Debug\net9.0-windows\CafePOS.runtimeconfig.json
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\bin\Debug\net9.0-windows\CafePOS.dll
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\bin\Debug\net9.0-windows\CafePOS.pdb
-C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\MainWindow.baml
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\Views\DashboardView.baml
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\Views\LoginWindow.baml
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\Views\OrderView.baml
+C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\App.baml
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\MainWindow.g.cs
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\Views\DashboardView.g.cs
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\Views\LoginWindow.g.cs
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\Views\OrderView.g.cs
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\App.g.cs
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS_MarkupCompile.cache
+C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\MainWindow.baml
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS.g.resources
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS.AssemblyInfoInputs.cache
@@ -24,5 +25,5 @@ C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\refint\
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS.pdb
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS.genruntimeconfig.cache
 C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\ref\CafePOS.dll
-C:\Users\Maria\Documents\GitHub\CafePOS\CafePOS\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\Users\Maria\Documents\GitHub\CafePOS\CafePOS\obj\Debug\net9.0-windows\CafePOS_MarkupCompile.lref
+C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Maria\Documents\GitHub\CafePOS\CafePos\obj\Debug\net9.0-windows\CafePOS_MarkupCompile.lref

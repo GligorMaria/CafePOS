@@ -1,4 +1,5 @@
 using System.Windows.Controls;
+using CafePOS.ViewModels;
 
 namespace CafePOS.Views
 {
@@ -6,7 +7,8 @@ namespace CafePOS.Views
     {
         public OrderView()
         {
-            InitializeComponent(); // THIS LINE MUST BE HERE
+            InitializeComponent();
+            DataContext = new OrderViewModel();
         }
     }
 }
