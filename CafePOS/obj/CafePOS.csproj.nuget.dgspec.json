@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePos\\CafePOS.csproj": {}
+    "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePOS\\CafePOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePos\\CafePOS.csproj": {
+    "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePOS\\CafePOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePos\\CafePOS.csproj",
+        "projectUniqueName": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePOS\\CafePOS.csproj",
         "projectName": "CafePOS",
-        "projectPath": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePos\\CafePOS.csproj",
+        "projectPath": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePOS\\CafePOS.csproj",
         "packagesPath": "C:\\Users\\Maria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePos\\obj\\",
+        "outputPath": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePOS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maria\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2025.12.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

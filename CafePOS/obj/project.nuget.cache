@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vviN+5KjZKc=",
+  "dgSpecHash": "kFQmWJdRiho=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePos\\CafePOS.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePOS\\CafePOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Maria\\.nuget\\packages\\questpdf\\2025.12.0\\questpdf.2025.12.0.nupkg.sha512"
+  ],
   "logs": []
 }

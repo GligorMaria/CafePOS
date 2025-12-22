@@ -8,13 +8,14 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using CafePOS.Data;
 
-
 namespace CafePOS.ViewModels
 {
     public class OrderViewModel : INotifyPropertyChanged
     {
         private readonly OrderManager _orderManager;
         private readonly SalesLogService _logService;
+        // 1. Add the ReceiptService field
+        private readonly ReceiptService _receiptService;
 
         public ObservableCollection<MenuItem> MenuItems { get; set; } = new();
         public ObservableCollection<MenuItem> CurrentOrderItems { get; set; } = new();
@@ -30,6 +31,8 @@ namespace CafePOS.ViewModels
         {
             _orderManager = new OrderManager();
             _logService = new SalesLogService();
+            // 2. Initialize the ReceiptService
+            _receiptService = new ReceiptService();
 
             // Commands
             AddToOrderCommand = new RelayCommand(item => AddToOrder((MenuItem)item!));
@@ -37,7 +40,7 @@ namespace CafePOS.ViewModels
             PayCashCommand = new RelayCommand(_ => CompleteSale(PaymentType.Cash));
             PayCardCommand = new RelayCommand(_ => CompleteSale(PaymentType.Card));
 
-            // Load Menu items from Menu.cs
+            // Load Menu items
             Menu cafeMenu = new Menu();
             foreach (var item in cafeMenu.GetAllItems())
             {
@@ -64,8 +67,15 @@ namespace CafePOS.ViewModels
         public void CompleteSale(PaymentType type)
         {
             if (CurrentOrderItems.Count == 0) return;
+
+            // 3. Generate the PDF Receipt BEFORE clearing the list
+            // We pass a copy of the list so the PDF can build even if the UI clears quickly
+            _receiptService.GenerateReceipt(new ObservableCollection<MenuItem>(CurrentOrderItems), Total);
+
+            // 4. Existing logic for logs and cleanup
             var transaction = _orderManager.CompleteSale(type);
             _logService.LogSale(transaction);
+            
             CurrentOrderItems.Clear();
             OnPropertyChanged(nameof(Total));
         }
