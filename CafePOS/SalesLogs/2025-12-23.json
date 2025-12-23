@@ -38,5 +38,21 @@
   {
     "Timestamp": "2025-12-23T01:43:31.7284659+02:00",
     "Receipt": "Order Summary:\n- Vanilla Latte \uD83C\uDF66 (14,00 RON)\n- Caramel Macchiato \uD83C\uDF6F (15,00 RON)\n--------------------\nTotal: 29,00 RON\r\nPayment: Cash\r\nFinal Total: 29,00 RON\r\nTime: 23.12.2025 01:43:31\r\n"
+  },
+  {
+    "Timestamp": "2025-12-23T02:29:51.8268778+02:00",
+    "Receipt": "Order Summary:\n- Cappuccino \uD83E\uDD0D (12,00 RON)\n--------------------\nTotal: 12,00 RON\r\nPayment: Cash\r\nFinal Total: 12,00 RON\r\nTime: 23.12.2025 02:29:51\r\n"
+  },
+  {
+    "Timestamp": "2025-12-23T02:30:10.8953012+02:00",
+    "Receipt": "Order Summary:\n- Cappuccino \uD83E\uDD0D (12,00 RON)\n--------------------\nTotal: 12,00 RON\r\nPayment: Cash\r\nFinal Total: 12,00 RON\r\nTime: 23.12.2025 02:30:10\r\n"
+  },
+  {
+    "Timestamp": "2025-12-23T02:30:12.3981152+02:00",
+    "Receipt": "Order Summary:\n- Butter Croissant \uD83E\uDD50 (7,50 RON)\n--------------------\nTotal: 7,50 RON\r\nPayment: Cash\r\nFinal Total: 7,50 RON\r\nTime: 23.12.2025 02:30:12\r\n"
+  },
+  {
+    "Timestamp": "2025-12-23T02:30:18.2077196+02:00",
+    "Receipt": "Order Summary:\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n- Iced Latte \uD83E\uDDCA (13,00 RON)\n--------------------\nTotal: 169,00 RON\r\nPayment: Cash\r\nFinal Total: 169,00 RON\r\nTime: 23.12.2025 02:30:18\r\n"
   }
 ]

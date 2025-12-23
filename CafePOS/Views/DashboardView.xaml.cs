@@ -1,24 +1,29 @@
-using System.Windows.Controls; // Change to Controls for UserControl
-using CafePOS.Services;
-using System.IO;
-using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using LiveChartsCore.SkiaSharpView.WPF;
 
-namespace CafePOS.Views {
-        public partial class DashboardView : UserControl 
+namespace CafePOS.Views
+{
+    public partial class DashboardView : UserControl
     {
         public DashboardView()
         {
             InitializeComponent();
-            LoadData();
-        }
 
-        private async void LoadData()
-        {
-            var dashboard = new DashboardService();
-            string file = Path.Combine("SalesLogs", $"{DateTime.Now:yyyy-MM-dd}.json");
-            var hourlySales = await dashboard.GetHourlySalesAsync(file);
-            // Ensure 'ChartContainer' exists in your DashboardView.xaml!
-            // ChartContainer.ItemsSource = hourlySales; 
+            // We use 'FindName' to get the control even if the compiler is stuck
+            var host = this.FindName("ChartHost") as ContentControl;
+
+            if (host != null)
+            {
+                var chart = new CartesianChart();
+
+                // Set up the bindings manually
+                chart.SetBinding(CartesianChart.SeriesProperty, new Binding("SalesSeries"));
+                chart.SetBinding(CartesianChart.XAxesProperty, new Binding("XAxes"));
+
+                host.Content = chart;
+            }
         }
     }
 }
