@@ -15,10 +15,8 @@ namespace CafePOS.Services
         {
             try
             {
-                // Must be first
                 QuestPDF.Settings.License = LicenseType.Community;
 
-                // Create a path that DEFINITELY works (Your Documents folder)
                 string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 string filePath = Path.Combine(folderPath, $"CafeReceipt_{DateTime.Now:HHmmss}.pdf");
 
@@ -29,8 +27,6 @@ namespace CafePOS.Services
                         page.Size(PageSizes.A6);
                         page.Margin(1, Unit.Centimetre);
                         page.PageColor(Colors.White);
-
-                        // Use a standard system font to avoid 'Lato' loading errors for now
                         page.DefaultTextStyle(x => x.FontSize(10).FontFamily(Fonts.Verdana));
 
                         page.Header().Text("☕ CafePOS").FontSize(20).SemiBold().AlignCenter();
@@ -59,12 +55,10 @@ namespace CafePOS.Services
                     });
                 }).GeneratePdf(filePath);
 
-                // Open the folder so you can see it
                 Process.Start("explorer.exe", $"/select,\"{filePath}\"");
             }
             catch (Exception ex)
             {
-                // This will tell us EXACTLY why it's failing
                 System.Windows.MessageBox.Show("PDF Error: " + ex.Message);
             }
         }

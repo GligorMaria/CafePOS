@@ -1,7 +1,7 @@
 <Application x:Class="CafePOS.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Views/LoginWindow.xaml">
     <Application.Resources>
         <SolidColorBrush x:Key="CafeDarkBrown" Color="#4A3728"/>
         <SolidColorBrush x:Key="CafeMediumBrown" Color="#8D6E63"/>
