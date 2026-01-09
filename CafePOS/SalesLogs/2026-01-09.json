@@ -1,0 +1,10 @@
+[
+  {
+    "Timestamp": "2026-01-09T19:28:39.9386701+02:00",
+    "Receipt": "Order Summary:\n- Vanilla Latte \uD83C\uDF66 (14,00 RON)\n--------------------\nTotal: 14,00 RON\r\nPayment: Cash\r\nFinal Total: 14,00 RON\r\nTime: 09.01.2026 19:28:39\r\n"
+  },
+  {
+    "Timestamp": "2026-01-09T19:29:06.420242+02:00",
+    "Receipt": "Order Summary:\n- Caramel Macchiato \uD83C\uDF6F (15,00 RON)\n- Latte \uD83E\uDD0E (12,50 RON)\n--------------------\nTotal: 27,50 RON\r\nPayment: Card\r\nFinal Total: 27,50 RON\r\nTime: 09.01.2026 19:29:06\r\n"
+  }
+]
