@@ -1,7 +1,7 @@
 using CafePOS.Data;
 using CafePOS.Models;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CafePOS.Services
 {
@@ -9,27 +9,20 @@ namespace CafePOS.Services
     {
         public void Initialize()
         {
-            using (var db = new CafeDbContext())
-            {
-                // Creează baza de date automat dacă nu există (fără migrări!)
-                db.Database.EnsureCreated();
+            using var db = new CafeDbContext();
 
-                // Dacă tabela de produse e goală, o populăm cu datele tale originale
-                if (!db.MenuItems.Any())
-                {
-                    var originalMenu = new CafePOS.Data.Menu(); 
-                    db.MenuItems.AddRange(originalMenu.GetAllItems());
-                    db.SaveChanges();
-                }
+            if (!db.MenuItems.Any())
+            {
+                var originalMenu = new CafePOS.Data.Menu();
+                db.MenuItems.AddRange(originalMenu.GetAllItems());
+                db.SaveChanges();
             }
         }
 
         public List<MenuItem> LoadMenu()
         {
-            using (var db = new CafeDbContext())
-            {
-                return db.MenuItems.ToList();
-            }
+            using var db = new CafeDbContext();
+            return db.MenuItems.ToList();
         }
     }
 }

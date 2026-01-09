@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "v/qTNPOmsbI=",
+  "dgSpecHash": "8GoMHpa5qBU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Maria\\Documents\\GitHub\\CafePOS\\CafePOS\\CafePOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Maria\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Maria\\.nuget\\packages\\harfbuzzsharp\\8.3.0.1\\harfbuzzsharp.8.3.0.1.nupkg.sha512",
     "C:\\Users\\Maria\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\8.3.0.1\\harfbuzzsharp.nativeassets.macos.8.3.0.1.nupkg.sha512",
     "C:\\Users\\Maria\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.0.1\\harfbuzzsharp.nativeassets.win32.8.3.0.1.nupkg.sha512",

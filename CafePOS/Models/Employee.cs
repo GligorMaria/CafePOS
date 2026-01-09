@@ -2,20 +2,26 @@ namespace CafePOS.Models
 {
     public class Employee
     {
-        // EF are nevoie de set; pentru a încărca datele din tabel
+        // Primary Key
+        public int Id { get; set; }
+
         public string Name { get; set; } = string.Empty;
+
+        // PIN hashuit (NU pinul real)
         public string Pin { get; set; } = string.Empty;
 
-        // 1. Constructor obligatoriu pentru Entity Framework
-        public Employee()
-        {
-        }
+        // Rolul angajatului
+        public string Role { get; set; } = "Cashier";
 
-        // 2. Constructorul tău original (rămâne pentru logica aplicației)
-        public Employee(string name, string pin)
+        // Constructor obligatoriu EF
+        public Employee() { }
+
+        // Constructor pentru aplicație
+        public Employee(string name, string pin, string role = "Cashier")
         {
             Name = name;
-            Pin = pin;
+            Role = role;
+            Pin = BCrypt.Net.BCrypt.HashPassword(pin);
         }
     }
 }

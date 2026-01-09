@@ -22,9 +22,7 @@ namespace CafePOS
                 // Inițializăm contextul bazei de date
                 using (var db = new CafeDbContext())
                 {
-                    // Creează fișierul cafe.db dacă nu există. 
-                    // Această linie poate eșua dacă pachetele SQLite nu sunt instalate corect.
-                    db.Database.EnsureCreated();
+                    
 
                     // Verificăm dacă există angajați în tabelă
                     if (!db.Employees.Any())

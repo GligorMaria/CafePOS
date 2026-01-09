@@ -1,25 +1,30 @@
 using Microsoft.EntityFrameworkCore;
 using CafePOS.Models;
+using CafePOS.Services;
 
 namespace CafePOS.Data
 {
     public class CafeDbContext : DbContext
     {
-        public DbSet<MenuItem> MenuItems { get; set; }
-        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Employee> Employees => Set<Employee>();
+        public DbSet<MenuItem> MenuItems => Set<MenuItem>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            // Creează fișierul bazei de date în folderul proiectului
-            options.UseSqlite("Data Source=cafe.db");
+            options.UseSqlite("Data Source=cafepos.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Îi spunem că 'Name' este identificatorul unic (cheia)
-            // Astfel nu trebuie să adăugăm câmpul 'Id' în clasa ta originală
-            modelBuilder.Entity<MenuItem>().HasKey(m => m.Name);
-            modelBuilder.Entity<Employee>().HasKey(e => e.Pin);
+            modelBuilder.Entity<Employee>().HasData(
+                new Employee
+                {
+                    Id = 1,
+                    Name = "Admin",
+                    Role = "Admin",
+                    Pin = PasswordHasher.Hash("0000")
+                }
+            );
         }
     }
 }

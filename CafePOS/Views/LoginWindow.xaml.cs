@@ -1,8 +1,9 @@
-using System;
+using CafePOS.Data;
+using CafePOS.Services;
+using CafePOS.Models;       // Added for Employee
+using CafePOS.ViewModels;   // Added for MainViewModel
 using System.Linq;
 using System.Windows;
-using CafePOS.Data; 
-using CafePOS.Models;
 
 namespace CafePOS.Views
 {
@@ -19,48 +20,51 @@ namespace CafePOS.Views
 
             if (string.IsNullOrWhiteSpace(enteredPin))
             {
-                MessageBox.Show("Vă rugăm să introduceți PIN-ul.", "Atenție");
+                MessageBox.Show("Please enter your PIN.", "Input Required", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            try
+            try 
             {
-                using (var db = new CafeDbContext())
-                {
-                    db.Database.EnsureCreated();
-                    var employee = db.Employees.FirstOrDefault(u => u.Pin == enteredPin);
+                using var db = new CafeDbContext();
 
-                    if (employee != null)
-                    {
-                        MainWindow main = new MainWindow();
-                        main.Show();
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("PIN incorect!", "Eroare");
-                        PinPasswordBox.Clear();
-                        PinPasswordBox.Focus();
-                    }
+                // 1. FIXED: Changed 'e.PinHash' to 'e.Pin' to match your Employee model
+                var employee = db.Employees
+                                 .AsEnumerable() 
+                                 .FirstOrDefault(emp => PasswordHasher.Verify(enteredPin, emp.Pin));
+
+                if (employee == null)
+                {
+                    MessageBox.Show("Incorrect PIN!", "Access Denied", MessageBoxButton.OK, MessageBoxImage.Error);
+                    PinPasswordBox.Clear();
+                    return;
                 }
+
+                // 2. FIXED: Connection to MainWindow via ViewModel
+                // Since your MainWindow uses DataBinding, we pass the employee to the ViewModel
+                MainWindow mainWindow = new MainWindow(employee);
+                MainViewModel mainVM = new MainViewModel(employee);
+                
+                mainWindow.DataContext = mainVM; // This connects the UI to the Logic
+                mainWindow.Show();
+                this.Close();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-                MessageBox.Show($"Eroare bază de date: {ex.Message}");
+                MessageBox.Show($"Database error: {ex.Message}");
             }
+        }
+
+        private void SignupButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Fixed name to match your file: SignUpWindow
+            new SignUpWindow().Show();
+            this.Close();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
-        }
-
-        private void NumberButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (sender is System.Windows.Controls.Button button)
-            {
-                PinPasswordBox.Password += button.Content.ToString();
-            }
         }
     }
 }

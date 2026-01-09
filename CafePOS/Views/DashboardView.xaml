@@ -9,9 +9,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Performance Analytics" FontSize="28" FontWeight="Bold" Foreground="{StaticResource CafeDarkBrown}" Margin="0,0,0,20"/>
+        <TextBlock x:Name="AnalyticsTitle" Text="Performance Analytics" FontSize="28" 
+                   FontWeight="Bold" Foreground="{StaticResource CafeDarkBrown}" Margin="0,0,0,20"/>
 
-        <Border Grid.Row="1" Style="{StaticResource MenuCardStyle}" Margin="0,0,10,25" Padding="15">
+        <Border x:Name="ChartBorder" Grid.Row="1" Style="{StaticResource MenuCardStyle}" Margin="0,0,10,25" Padding="15">
             <ContentControl x:Name="ChartHost" />
         </Border>
 
